@@ -1,5 +1,5 @@
 # Write your MySQL query statement below
-SELECT 
+with  TopSalaries AS(SELECT 
     d.name AS Department,
     e.name AS Employee,
     e.salary AS Salary
@@ -11,4 +11,6 @@ WHERE (
     FROM Employee e2
     WHERE e2.departmentId = e.departmentId
       AND e2.salary > e.salary
-) < 3;
+) < 3)
+SELECT department, salary, employee
+FROM TopSalaries;
